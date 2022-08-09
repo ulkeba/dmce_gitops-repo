@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dmce_demo-api_dotnet-deployment
+  name: dmce-demo-api-dotnet--deployment
   namespace: instance-a--app-1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dmce_demo-api_dotnet
+      app: dmce-demo-api-dotnet
   template:
     metadata:
       labels:
-        app: dmce_demo-api_dotnet
+        app: dmce-demo-api-dotnet
     spec:
       containers:
-      - name: dmce_demo-api_dotnet
+      - name: dmce-demo-api-dotnet
         image: dmced01acr.azurecr.io/dmce_demo-api_dotnet:0.1.0
         imagePullPolicy: Always
         ports:
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: dmce_demo-api_dotnet-service
+  name: dmce-demo-api-dotnet--service
   namespace: instance-a--app-1
 spec:
   selector:
-    app: dmce_demo-api_dotnet
+    app: dmce-demo-api-dotnet
   ports:
     - port: 8080
       targetPort: 80
