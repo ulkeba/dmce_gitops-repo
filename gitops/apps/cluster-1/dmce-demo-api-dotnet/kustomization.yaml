@@ -9,5 +9,16 @@ patches:
       - op: add
         path: /metadata/namespace
         value: "cluster-1--dmce-demo-api-dotnet"
-patchesStrategicMerge:
-  - patch.yaml
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: dmce-demo-api-dotnet--deployment
+      spec:
+        template:
+          spec: 
+            containers:
+            - name: dmce-demo-api-dotnet
+              env:
+              - name: "ENVIRONMENT"
+                value: "cluster-1"
