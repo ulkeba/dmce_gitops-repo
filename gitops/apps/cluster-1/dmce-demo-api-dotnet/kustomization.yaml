@@ -1,7 +1,7 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 spec: 
-  targetNamespace: cluster-1--dmce-demo-api-dotnet
+  targetNamespace: abc
 resources:
   - ../../base/dmce-demo-api-dotnet
 patchesStrategicMerge:
