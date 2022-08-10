@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dmce-demo-api-dotnet--deployment
-  namespace: cluster-1--dmce-demo-api-dotnet
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: dmce-demo-api-dotnet--service
-  namespace: cluster-1--dmce-demo-api-dotnet
+spec:
+  template:
+    spec: 
+      containers:
+      - name: dmce-demo-api-dotnet
+        env:
+        - name: "ENVIRONMENT"
+          value: "cluster-1"

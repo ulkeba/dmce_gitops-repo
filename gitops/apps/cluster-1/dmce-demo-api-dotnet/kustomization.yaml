@@ -1,5 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+targetNamespace: cluster-1--dmce-demo-api-dotnet
 resources:
   - ../../base/dmce-demo-api-dotnet
 patchesStrategicMerge:
