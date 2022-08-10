@@ -1,0 +1,3 @@
+- op: add
+  path: /metadata/namespace
+  value: "cluster-2--dmce-demo-api-dotnet"
