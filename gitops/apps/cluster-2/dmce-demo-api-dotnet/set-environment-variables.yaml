@@ -8,5 +8,5 @@ spec:
       containers:
       - name: dmce-demo-api-dotnet
         env:
-        - name: "ENVIRONMENT"
+        - name: "ENVIRONMENT_NAME"
           value: "cluster-2"
