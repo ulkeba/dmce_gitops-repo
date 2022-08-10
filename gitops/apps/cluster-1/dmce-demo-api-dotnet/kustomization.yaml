@@ -8,6 +8,6 @@ patches:
     patch: |-
       - op: add
         path: /metadata/namespace
-        value: "yeeha"
+        value: "cluster-1--dmce-demo-api-dotnet"
 patchesStrategicMerge:
   - patch.yaml
