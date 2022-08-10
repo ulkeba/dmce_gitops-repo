@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: dmce-demo-api-dotnet
-        image: dmced01acr.azurecr.io/dmce_demo-api_dotnet:0.1.0
+        image: dmced01acr.azurecr.io/dmce_demo-api_dotnet:0.3.0
         imagePullPolicy: Always
         ports:
         - containerPort: 80
