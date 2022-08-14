@@ -4,5 +4,5 @@ metadata:
   name: dmce-demo-api-dotnet--secretproviderclass
 spec:
   parameters:
-    keyvaultName: dmced01akv-c1-demoapi
+    keyvaultName: dmced01akv-c2-demoapi
     tenantId: 679a5224-7633-461d-adce-df49fa1f2a04
