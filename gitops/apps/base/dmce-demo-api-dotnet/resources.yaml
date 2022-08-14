@@ -54,6 +54,8 @@ apiVersion: secrets-store.csi.x-k8s.io/v1
 kind: SecretProviderClass
 metadata:
   name: dmce-demo-api-dotnet--secretproviderclass
+  labels:
+    namespaced-resource: yes
 spec:
   provider: azure
   parameters:
