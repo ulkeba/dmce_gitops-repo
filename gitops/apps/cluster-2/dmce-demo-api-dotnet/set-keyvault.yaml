@@ -1,0 +1,8 @@
+apiVersion: secrets-store.csi.x-k8s.io/v1
+kind: SecretProviderClass
+metadata:
+  name: dmce-demo-api-dotnet--secretproviderclass
+spec:
+  parameters:
+    keyvaultName: dmced01akv-c1-demoapi
+    tenantId: 679a5224-7633-461d-adce-df49fa1f2a04

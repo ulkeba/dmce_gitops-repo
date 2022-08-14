@@ -20,6 +20,19 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: dmce-demo-api-dotnet--deployment--secrets
+          mountPath: "/mnt/secrets"
+          readOnly: true
+      volumes:
+      - name: dmce-demo-api-dotnet--deployment--secrets
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "dmce-demo-api-dotnet--secretproviderclass"
+          nodePublishSecretRef:                       
+            name: azure-key-vault-credentials
       imagePullSecrets:
       - name: acr-pull
 ---
@@ -36,3 +49,17 @@ spec:
     - port: 8080
       targetPort: 80
   type: LoadBalancer
+---
+apiVersion: secrets-store.csi.x-k8s.io/v1
+kind: SecretProviderClass
+metadata:
+  name: dmce-demo-api-dotnet--secretproviderclass
+spec:
+  provider: azure
+  parameters:
+    usePodIdentity: "false"
+    objects:  |
+      array:
+        - |
+          objectName: db-connection-string
+          objectType: secret
