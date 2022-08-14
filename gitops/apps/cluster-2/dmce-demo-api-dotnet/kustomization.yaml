@@ -12,3 +12,4 @@ patches:
     path: set-namespace.yaml
   - path: set-environment-variables.yaml
   - path: set-keyvault.yaml
+  
