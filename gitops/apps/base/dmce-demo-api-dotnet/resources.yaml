@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: dmce-demo-api-dotnet
+        scrape: "true"
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/path: "/metrics"
