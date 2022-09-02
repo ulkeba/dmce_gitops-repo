@@ -24,7 +24,10 @@ spec:
         image: dmced01acr.azurecr.io/dmce_demo-api_dotnet:0.3.0
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - name: http
+          containerPort: 80
+        - name: https
+          containerPort: 443
         volumeMounts:
         - name: dmce-demo-api-dotnet--deployment--secrets
           mountPath: "/mnt/secrets"
@@ -52,7 +55,9 @@ spec:
     app: dmce-demo-api-dotnet
   ports:
     - port: 8080
-      targetPort: 80
+      targetPort: http
+    - port: 8443
+      targetPort: https
   type: LoadBalancer
 ---
 apiVersion: secrets-store.csi.x-k8s.io/v1
