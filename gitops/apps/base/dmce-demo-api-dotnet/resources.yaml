@@ -54,9 +54,11 @@ spec:
   selector:
     app: dmce-demo-api-dotnet
   ports:
-    - port: 8080
+    - name: http
+      port: 8080
       targetPort: http
-    - port: 8443
+    - name: https
+      port: 8443
       targetPort: https
   type: LoadBalancer
 ---
