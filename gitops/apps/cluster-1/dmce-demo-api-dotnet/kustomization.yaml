@@ -5,7 +5,7 @@ resources:
 images:
   - name: dmced01acr.azurecr.io/dmce_demo-api_dotnet
     newName: dmced01acr.azurecr.io/dmce_demo-api_dotnet
-    newTag: 0.4.1-metrics.1
+    newTag: 0.4.1-auth.1
 patches:
   - target:
       labelSelector: namespaced-resource=yes
@@ -26,6 +26,10 @@ patches:
               env:
               - name: "ENVIRONMENT_NAME"
                 value: "cluster-1"
+              - name: "OIDC_AUDIENCE"
+                value: "api://dmce_demo-api_dotnet_local-dev_2"
+              - name: "OIDC_AUTHORITY"
+                value: "https://sts.windows.net/679a5224-7633-461d-adce-df49fa1f2a04/"
   - patch: |-
       apiVersion: secrets-store.csi.x-k8s.io/v1
       kind: SecretProviderClass
